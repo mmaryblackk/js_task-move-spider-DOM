@@ -13,11 +13,11 @@ document.addEventListener('click', (e) => {
   const wallSize = wall.getBoundingClientRect();
   const wallBorder = parseInt(window.getComputedStyle(wall).borderWidth, 10);
 
-  const relativeX = x - wallSize.left - wallBorder - spider.width / 2;
-  const relativeY = y - wallSize.top - wallBorder - spider.height / 2;
+  const relativeX = x - wallSize.left - wallBorder - spider.offsetWidth / 2;
+  const relativeY = y - wallSize.top - wallBorder - spider.offsetHeight / 2;
 
-  const spiderX = clamp(relativeX, 0, wall.clientWidth - spider.width);
-  const spiderY = clamp(relativeY, 0, wall.clientHeight - spider.height);
+  const spiderX = clamp(relativeX, 0, wall.clientWidth - spider.offsetWidth);
+  const spiderY = clamp(relativeY, 0, wall.clientHeight - spider.offsetHeight);
 
   spider.style.left = `${spiderX}px`;
   spider.style.top = `${spiderY}px`;
